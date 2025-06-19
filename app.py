@@ -1,8 +1,10 @@
 import os
 from flask import Flask, request, jsonify # type: ignore
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 def careerjet_search(keywords, location, page_number=1, pagesize=100):
     url = 'http://public.api.careerjet.net/search'
